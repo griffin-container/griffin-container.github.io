@@ -37,7 +37,7 @@ Please search for #third-party for third-party resources
 <meta name="description" content="Empty container">
 <meta name="theme-color" content="DeepSkyBlue">
 <meta name="srcDigest" content="">
-<meta name="docDigest" content="d0829470358d2542e85701cb454858ca4d3697ed9e355b3c84ef7a467229c442">
+<meta name="docDigest" content="4d87311330b1e9b84d955ff941c24ac3bb90ef2eec322f9d45ade1e214e7f0e5">
 <meta name="publicKey" content="">
 <meta name="publicKeyFormat" content="">
 <meta name="algName" content="">
@@ -7316,53 +7316,8 @@ integrityVerificationTest(DOC_CONTENT,
 	statusMessageMargin.style.display = 'block';
 });
 
-// /*
-// 	#third-party:
-// 	based on: https://gist.github.com/serin113/3186244
-// */
-
-// /*
-//  * Lets you use your browser's back/forward buttons for in-page navigation by
-//  * adding custom 'next' and 'previous' events to the window object.
-//  *
-//  * Copyright (c) 2011 Tobias Schneider <schneider@jancona.com>
-//  * This script is freely distributable under the terms of the MIT license.
-//  *
-//  * Example:
-//  *
-//  *	window.addEventListener('next', function(){
-//  *		console.log('forward button clicked');
-//  *	}, false);
-//  *
-//  *	window.addEventListener('previous', function(){
-//  *		console.log('back button clicked');
-//  *	}, false);
-//  */
-
-// if(window.history && history.pushState){ // check for history api support
-// 	window.addEventListener('load', function(){
-// 		// create history states
-// 		history.pushState(-1, null); // back state
-// 		history.pushState(0, null); // main state
-// 		history.pushState(1, null); // forward state
-// 		history.go(-1); // start in main state
-				
-// 		this.addEventListener('popstate', function(event, state){
-// 			// check history state and fire custom events
-// 			if(state = event.state){
-// 				event = document.createEvent('Event');
-// 				event.initEvent(state > 0 ? 'next' : 'previous', true, true);
-// 				this.dispatchEvent(event);
-				
-// 				// reset state
-// 				history.go(-state);
-// 			}
-// 		}, false);
-// 	}, false);
-// }
-
 // back button clicked
-window.addEventListener('previous', function(){
+window.addEventListener('hashchange', function() {
 	for (const menuEl of menuEls)
 		if (menuEl.style.display != 'none') {
 			menuEl.style.display = 'none'
