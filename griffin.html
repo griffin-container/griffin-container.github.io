@@ -37,7 +37,7 @@ Please search for #third-party for third-party resources
 <meta name="description" content="Empty container">
 <meta name="theme-color" content="DeepSkyBlue">
 <meta name="srcDigest" content="">
-<meta name="docDigest" content="0280f5fecf126afb14ac40d67a20fb576011acc97d7cd58b794ba3423e8b3a3a">
+<meta name="docDigest" content="cc0910a75fb4a824aad4955f731e7aafe6314741e5995b162d371fc770536698">
 <meta name="publicKey" content="">
 <meta name="publicKeyFormat" content="">
 <meta name="algName" content="">
@@ -7317,34 +7317,34 @@ integrityVerificationTest(DOC_CONTENT,
 });
 
 // back button clicked
-window.addEventListener('popstate', function() {
-	for (const menuEl of menuEls)
-		if (menuEl.style.display != 'none') {
-			menuEl.style.display = 'none'
-			return;
-		}
-	//
-	for (const dialogEl of dialogsEls)
-		if (dialogEl.open) {
-			dialogEl.close();
-			clearQrDialog()
-			clearDecryptDialog();
-			clearLoginDialog();
-		    clearRegisterDialog();
-		    clearUnregisterDialog();
-			clearBlockDialog();
-			return;
-		}
-	//
-	for (const statusMessageEl of statusMessagesEls) {
-		if (statusMessageEl.style.display != 'none') {
-			statusMessageEl.style.display = 'none';
-			statusMessageMargin.style.display = 'none';
-			return
-		}
-	}
-	history.back();
-}, false);
+// window.addEventListener('popstate', function() {
+// 	for (const menuEl of menuEls)
+// 		if (menuEl.style.display != 'none') {
+// 			menuEl.style.display = 'none'
+// 			return;
+// 		}
+// 	//
+// 	for (const dialogEl of dialogsEls)
+// 		if (dialogEl.open) {
+// 			dialogEl.close();
+// 			clearQrDialog()
+// 			clearDecryptDialog();
+// 			clearLoginDialog();
+// 		    clearRegisterDialog();
+// 		    clearUnregisterDialog();
+// 			clearBlockDialog();
+// 			return;
+// 		}
+// 	//
+// 	for (const statusMessageEl of statusMessagesEls) {
+// 		if (statusMessageEl.style.display != 'none') {
+// 			statusMessageEl.style.display = 'none';
+// 			statusMessageMargin.style.display = 'none';
+// 			return
+// 		}
+// 	}
+// 	history.back();
+// }, false);
  
 /* close status message with Escape key */
 document.addEventListener('keydown', e => {
