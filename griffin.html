@@ -36,9 +36,8 @@ Please search for #third-party for third-party resources
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Empty container">
 <meta name="theme-color" content="DeepSkyBlue">
-<meta name="buildTimestamp" content="${ant.tstamp.now.iso}">
 <meta name="srcDigest" content="">
-<meta name="docDigest" content="031911190c542a65f9bf8ad635f3edf79e8168047da3b2846d090c1244b79cab">
+<meta name="docDigest" content="cc60654de1e9b19210cd629569143f9d6290145f18e17b92ce6d334de42a834d">
 <meta name="publicKey" content="">
 <meta name="publicKeyFormat" content="">
 <meta name="algName" content="">
@@ -6803,7 +6802,7 @@ async function displayContainer() {
 	if (isServedOnline() || IS_STANDALONE) { // we need 'Download' button
 		downloadIcon.style.display = 'flex';
 		downloadIcon.addEventListener('click', (e) => {
-			const fileName = WAS_EMPTY ? FILE_NAME_HTML : metaContainerUuidEl.getAttribute('content') + '.html';
+			const fileName = WAS_EMPTY ? FILE_NAME_HTML : location.href.split('/').pop().split('#')[0].split('?')[0];
 			downloadAsTextlFile(fileName, DOC_CONTENT, 'text/html');
 	    });
 	} else
